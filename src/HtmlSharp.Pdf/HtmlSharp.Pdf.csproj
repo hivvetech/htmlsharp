@@ -6,7 +6,16 @@
 		<Company>Vertigo Ventures</Company>
 		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
 		<RepositoryUrl>https://github.com/vertigoventures/htmlsharp</RepositoryUrl>
+		<Description>100% managed (C#), High-performance HTML Rendering library.</Description>
+		<PackageReadmeFile>README.md</PackageReadmeFile>
 	</PropertyGroup>
+
+	<ItemGroup>
+	  <None Include="..\..\README.md">
+	    <Pack>True</Pack>
+	    <PackagePath>\</PackagePath>
+	  </None>
+	</ItemGroup>
 
 	<ItemGroup>
 		<ProjectReference Include="..\HtmlSharp.Core\HtmlSharp.Core.csproj" />

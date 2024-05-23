@@ -1,0 +1,44 @@
+name: Publish NuGet Package
+
+on:
+  release:
+    types: [published]
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Setup NuGet
+        uses: NuGet/setup-nuget@v1
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v3
+        with:
+          dotnet-version: '6.x'
+
+      - name: Restore HtmlSharp.Core
+        run: dotnet restore HtmlSharp.Core/HtmlSharp.Core.csproj
+
+      - name: Build HtmlSharp.Core
+        run: dotnet build HtmlSharp.Core/HtmlSharp.Core.csproj --configuration Release
+        
+      - name: Pack HtmlSharp.Core
+        run: dotnet pack HtmlSharp.Core/HtmlSharp.Core.csproj --configuration Release --output ./nupkg
+      
+      - name: Restore HtmlSharp.Pdf
+        run: dotnet restore HtmlSharp.Pdf/HtmlSharp.Pdf.csproj
+        
+      - name: Build HtmlSharp.Pdf
+        run: dotnet build HtmlSharp.Pdf/HtmlSharp.Pdf.csproj --configuration Release
+        
+      - name: Pack HtmlSharp.Pdf
+        run: dotnet pack HtmlSharp.Pdf/HtmlSharp.Pdf.csproj --configuration Release --output ./nupkg
+
+      - name: Publish NuGet package
+        env:
+          NUGET_API_KEY: ${{ secrets.NUGET_API_KEY }}
+        run: dotnet nuget push ./nupkg/*.nupkg -k $NUGET_API_KEY -s https://api.nuget.org/v3/index.json

@@ -4,9 +4,7 @@ This project was a modified version of the original project created from [Arthur
 
 ## Original License
 
-This project is licensed under the terms of the original license:
-
-[LICENSE](LICENSE.md).
+This project is licensed under the terms of the original license: [LICENSE](LICENSE.md).
 
 ## Modifications
 
