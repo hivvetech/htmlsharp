@@ -1,8 +1,8 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
-		<TargetFrameworks>netstandard2.1;net46</TargetFrameworks>
-		<Version>0.1.0</Version>
+		<TargetFrameworks>netstandard2.1;net46;net47</TargetFrameworks>
+		<Version>1.0.0</Version>
 		<Company>Vertigo Ventures</Company>
 		<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
 		<RepositoryUrl>https://github.com/vertigoventures/htmlsharp</RepositoryUrl>
@@ -26,7 +26,7 @@
 			<Version>1.51.5185</Version>
 		</PackageReference>
 		<PackageReference Include="System.Drawing.Common">
-			<Version>5.0.2</Version>
+			<Version>8.0.5</Version>
 		</PackageReference>
 	</ItemGroup>
 </Project>
