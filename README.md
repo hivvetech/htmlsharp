@@ -1,10 +1,5 @@
 # HTMLSharp
 
-This project was adopted from [ArthurHub/HTML-Renderer](https://github.com/ArthurHub/HTML-Renderer).
-
-
-# HTMLSharp
-
 This project was a modified version of the original project created from [ArthurHub/HTML-Renderer](https://github.com/ArthurHub/HTML-Renderer). This version includes additional features and improvements.
 
 ## Original License
